@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Motor TID v1.0</title>
+    <style>
+        body { font-family: sans-serif; background-color: #0d1117; color: #c9d1d9; padding: 20px; }
+        textarea { width: 100%; height: 150px; background-color: #161b22; color: #58a6ff; border: 1px solid #30363d; border-radius: 6px; padding: 10px; }
+        button { background-color: #238636; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; margin-top: 10px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #30363d; border-radius: 6px; background-color: #161b22; }
+    </style>
+</head>
+<body>
+    <h2>Motor TID v1.0</h2>
+    <textarea id="pgn" placeholder="Cole o PGN aqui..."></textarea>
+    <button onclick="analisar()">Analisar Pressão TID</button>
+    <div id="resultado">Aguardando PGN...</div>
+
+    <script>
+        function analisar() {
+            const pgn = document.getElementById('pgn').value;
+            const res = document.getElementById('resultado');
+            if (!pgn) {
+                res.innerText = "Por favor, cole um PGN válido.";
+                return;
+            }
+            res.innerHTML = "<strong>Análise TID:</strong> Detectando asfixia informacional...<br>O motor está a processar os lances.";
+        }
+    </script>
+</body>
+</html>
